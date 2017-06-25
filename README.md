@@ -6,6 +6,7 @@ Track your expenses and manage wallet funds...
 
 # What is it?
 Complete dynamic Firebase web Application. Uses angularJS and its MVC framework, and some basic DOM throughout the web application.
+View At : https://mayankmtg.github.io/Udar/#!/list
 
 ## Aim
 The main aim of the application is to:

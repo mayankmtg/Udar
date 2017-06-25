@@ -1,0 +1,65 @@
+<div class="container" id="logInForm" style="diaplay: block;">
+  <div class="panel panel-success width-fix">
+    <div class="panel-heading">
+      <h2 class="panel-title">Sign In</h2>
+    </div>
+    <div class="panel-body">
+      <form class="form-signin" ng-submit="udarLogin()">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <div class="alert alert-danger" role="alert" ng-show="udarErrorLogin"><strong>{{errorCode}}</strong>{{errorMessage}} </div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" ng-model="user.udarEmail" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="user.udarPassword" required>
+        <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-warning btn-block" ng-click="udarSignup()">Sign Up</button>
+      </form>  
+    </div>
+  </div>
+  
+
+</div>
+
+<div class="container" id="List" style="display: none;">
+
+  <form class="form-signin">
+    <center>  
+    <input type="text" id="name" class="form-control" placeholder="Udar-Name"  ng-model="newUdar.name">
+    <input type="text" id="price" class="form-control" placeholder="Udar-Price"  ng-model="newUdar.price">
+    <br>
+    
+    <div class="row">
+      <div class="col-sm-6">
+        <h1><span class="glyphicon glyphicon-plus-sign success" ng-click="udarGiven()"></span></h1>  
+      </div>
+      <div class="col-sm-6">
+        <h1><span class="glyphicon glyphicon-minus-sign" ng-click="udarTaken()"></span></h1>
+      </div>
+      
+    </div>
+    </center>
+
+  </form>
+  <!--button class="btn btn-lg btn-info btn-block" ng-click="udarLoad()">Load</button-->
+  <br>
+  
+  
+
+      <div class="row">
+            <div class="col-sm-12">
+                  <ul class="list-group" id="myUdarList">
+                        <li class="fade list-group-item" ng-repeat="item in udarList">{{item.udarName}} -  {{ item.udarPrice }}<span class="pull-right  glyphicon glyphicon-remove-sign" ng-click="udarRemove(item, item.udarSnap)"></span></li>
+                  </ul>
+            </div>
+      </div>
+      <center>
+            <div id="loader" ng-hide="listDisp"></div>  
+      </center>
+
+      <div style="position: fixed;bottom: 15px; right:30px;font-size: 40px;color: #808080;">
+        <span class="glyphicon glyphicon-off" title="Log Out" ng-click="udarLogout()"></span>
+
+      </div>
+
+</div>
+
